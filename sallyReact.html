@@ -13,7 +13,7 @@
     <main>
     
     <section>
-        <div class="contact"></div>
+        <div id="contact"></div>
     </section>
     
     <address>
@@ -37,23 +37,33 @@
         console.log(heads);
         return (
             <header>
-                {props.children}
+                {heads.children}
             </header>
         );
     }
-
     ReactDOM.render(
-        <headerRender className='headShow'>
+        <HeaderRender className='headShow'>
         <h1>Sally Student Resume</h1>
-        </headerRender>,
+        </HeaderRender>,
         document.querySelector('#pageTitle')
     );
 </script>
 
 <script>
     function ContactInfo(cont) {
-        console.log(cont)
+        console.log(cont);
+        return (
+            <section>
+                {cont.children}
+            </section>
+        );
     }
+    ReactDOM.render(
+        <ContactInfo className='infoHead'>
+        <h2>Contanct Info:</h2>
+        </ContactInfo>,
+        document.querySelector('#contact')
+    );
 </script>
 </body>
 </html>
