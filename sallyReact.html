@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sally Student Resume</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 <body>
     <header>
@@ -15,10 +16,9 @@
     <section>
         <div id="contact"></div>
     </section>
-    
-    <address>
-
-    </address>
+    <section>
+        <div id=edu></div>
+    </section>
 
     </main>
   
@@ -49,7 +49,23 @@
     );
 </script>
 
-<script>
+<!-- <script type="text/babel">
+    ReactDOM.render(
+        <div>
+            <h2>Contact Info:</h2>
+            <address>
+                <ul>
+                    <li><a href="mailto:Sally.Student@gmail.com">Sally.Student@gmail.com</a></li>
+                    <li><a href="tel:+441617289876">(+44)161 728 9876</a></li>
+                    <li><a href="https://twitter.com/sallyStudent">Twitter: @sallyStudent</a></li>
+                </ul>
+            </address>
+        </div>,
+        document.querySelector('#contact')
+    )
+</script> -->
+
+<script type="text/babel">
     function ContactInfo(cont) {
         console.log(cont);
         return (
@@ -61,9 +77,51 @@
     ReactDOM.render(
         <ContactInfo className='infoHead'>
         <h2>Contanct Info:</h2>
-        </ContactInfo>,
+        <address>
+                <ul>
+                    <li><a href="mailto:Sally.Student@gmail.com">Sally.Student@gmail.com</a></li>
+                    <li><a href="tel:+441617289876">(+44)161 728 9876</a></li>
+                    <li><a href="https://twitter.com/sallyStudent">Twitter: @sallyStudent</a></li>
+                </ul>
+            </address>
+            <img src="https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg" alt="A picture of Sally Student"/>
+        </ContactInfo>,                       
         document.querySelector('#contact')
+    );
+</script>
+
+<script type="text/babel">
+    function EduWork(props) {
+        console.log(props);
+        return (
+            <div>
+                {props.children}
+            </div>
+        )
+    }
+    ReactDOM.render(
+        <EduWork className="workEd">
+            <div>
+                <h2>Education</h2>
+                    <ul>
+                        <li>Middleton Technology School</li>
+                        <li>Hopwood Hall College</li>
+                        <li>University of Manchester</li>
+                    </ul>
+
+                <h3>Employment History</h3>
+                    <ol>
+                        <li>Rochdale Metroploitan Borough Library Service, Library Assistant, 23/04/2007-18/03/2010. This role consisted of maintaining the library's filing system, assisting customers with requests and supporting other sites.</li>
+                        <li>Royal Mercian and Lancastrian Yeomanry, Trooper, 25/09/2010-16/08/2016. A unit within the British Army's reserve forces involving forward reconnaissance and small unit tactics.</li>
+                        <li>Ministry of Justice, Administrative Assistant, 10/11/2016-present. This job involves maintaing accurate digital records of all court cases in England & Wales and processing claims in a timely fashion co-operating with both British and international courts.</li>
+                    </ol>
+            </div>
+        </EduWork>,
+        document.querySelector('#edu')
     );
 </script>
 </body>
 </html>
+
+
+  
